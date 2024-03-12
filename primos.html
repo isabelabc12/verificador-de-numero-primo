@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+Nome:  Henryque Carvalho Leal Santos  N°:15
+Nome:  Isabela Batista Couras  N°:17
+Turma: 3°A
+-->
+<html lang=”pt-BR”>
+<meta charset=”UTF-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>    
+<title>Verificador de Numeros Primos</title>
+</head>
+<body>    
+<h2>Verificador de numero primo</h2>
+<label> digite um numero natural abaixo
+    <input type="number" id="numero">  
+  <button onclick="verificarPrimo()">Verificar</button>
+</label>
+    <br><br>    
+<canvas id="resultado" width="800" height="800"></canvas>
+
+    <script> 
+       function verificarPrimo() {            var numero = parseInt(document.getElementById("numero").value);   
+         var i;  
+          var primo = true;   
+                     if (numero <= 1) {                alert("Numero invalido. Digite um numero maior que 1.");   
+             return;   
+         }    
+                    for (i = 2; i < numero; i++) {                if (numero % i === 0) {    
+                primo = false;
+                    break;            
+    }
+}                      
+  var canvas = document.getElementById("resultado"); 
+           var ctx = canvas.getContext("2d");  
+          ctx.clearRect(0, 0, canvas.width, canvas.height);    
+        ctx.font = "20px Arial";  
+                      if (primo) {                ctx.fillStyle = "green";  
+              ctx.fillText(numero + " é um nmero primo.", 10, 30);   
+         } 
+else {                ctx.fillStyle = "red";   
+             ctx.fillText(numero + " nao é um número primo.", 10, 30); 
+           }    
+    }  
+  </script>
+</body>
+</html>
